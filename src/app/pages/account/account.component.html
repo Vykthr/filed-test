@@ -1,0 +1,14 @@
+<section>
+    <div class="row">
+        <div class="col-6" style="padding: 100px">
+            <h1>Account Page - User data from store</h1>
+            <ul *ngIf="user| async as user">
+                <li>First Name: {{user.firstName}}</li>
+                <li>Last Name: {{user.lastName}}</li>
+                <li>Email: {{user.email}}</li>
+                <li>Phone: {{user.phone}}</li>
+                <li>Budget: ${{user.budget}}</li>
+            </ul>
+        </div>
+    </div>
+</section>

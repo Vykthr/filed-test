@@ -1,0 +1,54 @@
+<section class="banner">
+    <p>Our Offer: Intelligent Automation. Real-time Insights. Unparalleled Results.</p>
+</section>
+
+<section class="container benefits">
+    <div class="row">
+        <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+            <p class="title">The <span style="color: #38ccf5;">Benefits</span> of using Filed</p>
+        </div>
+        <div class="col-6">
+            <ul>
+                <li class="custom-list" *ngFor="let benefit of benefits">
+                    <img src="assets/images/Icon-awesome-check.svg" />
+                    <p>{{ benefit }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="container comment-section">
+    <div class="row comments">
+        <div class="col-4" *ngFor="let comment of comments" style="justify-content: center;">
+            <div class="row">
+                <img src="assets/images/Icon-material-format-quote.svg" />
+                <p class="highlight">"{{comment.highlight}}"</p>
+            </div>
+            <p class="text">"{{comment.text}}"</p>
+            <div class="row">
+                <img class="comment-image" src="{{comment.img}}" />
+                <div>
+                    <p class="name">{{comment.name}}</p>
+                    <p class="position">{{comment.position}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="row">
+        <div class="col-4 align-center">
+            <p>Copyright © 2020. All Rights Reserved.</p>
+        </div>
+        <div class="col-8 align-center links">
+            <li  *ngFor="let link of links"><a routerLink="{{link.to}}">{{link.text}}</a></li>
+            <li class="icons">
+                <a routerLink="/"><img src="assets/images/facebook.svg" /></a>
+                <a routerLink="/"><img src="assets/images/instagram.svg" /></a>
+                <a routerLink="/"><img src="assets/images/twitter.svg" /></a>
+            </li>
+        </div>
+    </div>
+</footer>

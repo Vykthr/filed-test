@@ -1,0 +1,86 @@
+<section class="container">
+    <div class="row">
+        <div class="col-6" style="display: flex; align-items: center; flex-direction: column;">
+            <p class="title">Book a demo today and get two weeks for <span class="span">free.</span> Why?</p>
+            <p class="subTitle">Because Our AI-Powered Software<br /> Will Exceed Your Marketing Goals.</p>
+
+            <img class="dots-blue" src="assets/images/dots-blue.svg" />
+
+            <img class="white-large" src="assets/images/white-large.svg" />
+            
+            <img class="white-md" src="assets/images/white-md.svg"  />
+
+            <img class="white-sm" src="assets/images/white-sm.svg" />
+
+            <img class="artboard" src="assets/images/Artboard1.png" />
+
+
+        </div>
+        <div class="col-6"  style="display: flex; align-items: center; flex-direction: column;">
+
+            <img class="dots" src="assets/images/dots.svg" />
+            <img class="blue-circle" src="assets/images/blue-circle.svg" />
+
+            <div class="card">
+                <div *ngIf="step === 0; else textForm">
+                    <p class="title title1 text-center">Let's Start</p>
+                    <p class="sub-title sub1 text-center">Fill out the form and we'll get in touch to get your trial set up.</p>
+                </div>
+                <ng-template #textForm>
+                    <p class="title title2 text-center" style="font-size: 24px; padding: 0 20px; line-height: 33px;">We’ll be in touch to get your trial set up.</p>
+                    <p class="sub-title sub2 text-center">Fill Out Form</p>
+                </ng-template>
+
+                <form [formGroup]="starterForm">
+                    <div *ngIf="step === 0; else mainForm">
+                        <div class="form-control">
+                            <label class="label">Do you want to make ads that convert?</label>
+                            <mat-radio-group aria-label="Select an option" formControlName="convert">
+                                <mat-radio-button style="margin-right: 30%;" value="yes">Yes</mat-radio-button>
+    
+                                <mat-radio-button value="no">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="form-control">
+                            <label class="label">What's your monthly ad budget?</label>
+                            <mat-form-field style="width: 100%;">
+                                <mat-select formControlName="budget" placeholder="Select">
+                                    <mat-option value="100">$100</mat-option>
+                                    <mat-option value="200">$200</mat-option>
+                                    <mat-option value="500">$500</mat-option>
+                                    <mat-option value="800">$800</mat-option>
+                                    <mat-option value="1000">$1000</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <button (click)="goto()" class="btn btn-primary btn-block ">Get Started</button>
+                    </div>
+
+                    <ng-template #mainForm>
+                        <div class="form-control">
+                            <input class="input-control" placeholder="First Name *" formControlName="firstName" value="">
+
+                            <input class="input-control" placeholder="Last Name *" formControlName="lastName" value="">
+                        </div>
+                        <div class="form-control">
+                            <input class="input-control full" placeholder="Work Email *" formControlName="email" value="">
+                        </div>
+                        <div class="form-control">
+                            <input type="number" class="input-control full" placeholder="Monthly Advertising Budget *" formControlName="budget" value="$">
+                        </div>
+                        <div class="form-control">
+                            <mat-form-field style="width: 40%;" class="input-control">
+                                <mat-select formControlName="country">
+                                    <mat-option value="" disabled><em>Select</em></mat-option>
+                                    <mat-option value="roman">Romania (Roman)</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <input style="width: 49%;"  class="input-control" placeholder="Phone *" type="number" formControlName="phone" value="">
+                        </div>
+                        <button (click)="storeUserData()" class="btn btn-primary btn-block ">Get Free Trial</button>
+                    </ng-template>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
